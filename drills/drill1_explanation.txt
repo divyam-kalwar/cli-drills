@@ -1,0 +1,23 @@
+* mkdir -p hello/five/six/seven hello/one/two/three/four :
+	This command create the file system mentioned in the drill where -p is used to create directory if not exist. This allowed to create the file system in one shot.
+
+* touch hello/five/six/c.txt hello/five/six/seven/error.log hello/one/a.txt hello/one/b.txt hello/one/two/d.txt hello/one/two/three/e.txt hello/one/two/three/four/access.log :
+	This command created the files mentioned in the drill inside the file system hierarchy.
+	
+* find ./hello -type f -name ".log" -delete:
+	This command finds the files ending with '.log' in ./hello file system and -delete delete's those files.
+	
+* echo "Unix is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others" >> hello/one/a.txt:
+	This command write the text content into a.txt file. Internally it appends the text to the end of the file a.txt where echo prints the text on cli.
+
+* rm -r ./hello/five:
+	This command removes the directory 'five' from the file system where -r is used to remove the directory with any files in it where as without -r it only removes the directory if its empty.
+
+* mv ./hello/one ./hello/uno:
+	This command changes the directory name of 'one' to 'uno'.
+	
+* mv ./hello/uno/a.txt ./hello/uno/two:
+	This command moves the file 'a.txt' into uno directory.
+	
+* tree ./hello:
+	This command shows the './hello' file system in tree format.
