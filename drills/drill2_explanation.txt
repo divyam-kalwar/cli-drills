@@ -63,3 +63,20 @@
 
 * sudo apt remove nginx :
  	This command is used to remove the Nginx software. `sudo` is used to provide administrator privileges.
+
+# Misc 	
+* ip addr : 
+	This command shows the ipv4/ipv6 of the network device and system.
+	
+* host google.com :
+	This command gives the list of ip address of google endpoint.
+	
+* ping -c 4 goole.com :
+	This command pings the google endpoint 4 times to check for the internet connections.
+
+* where node :
+	This command tells where the node is in the file system.
+	
+* where code : 
+	This command tells where the code is in the file system.
+

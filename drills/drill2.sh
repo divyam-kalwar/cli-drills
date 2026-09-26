@@ -27,3 +27,10 @@ sudo ss -lunpt | grep ":5432"
 #Managing software
 sudo apt install htop vim nginx
 sudo apt remove nginx
+
+#Misc
+ip addr
+host google.com
+ping -c 4 goole.com
+where node
+where code
