@@ -1,0 +1,65 @@
+# Pipes explanation
+* curl -o harry_potter_book.txt https://raw.githubusercontent.com/bobdeng/owlreader/master/ERead/assets/books/Harry%20Potter%20and%20the%20Goblet%20of%20Fire.txt :
+	This command reads the endpoint. It is used to hit the endpoint, read the content from the endpoint, and save it into the `harry_potter_book.txt` file.
+
+* tail -n 3 harry_potter_book.txt :
+	This command fetches the last three lines of text from the `harry_potter_book.txt` file.
+
+* head -n 10 harry_potter_book.txt :
+ 	This command fetches the first ten lines of text from the `harry_potter_book.txt` file.
+
+* grep -ow "Harry" harry_potter_book.txt | wc -w :
+ 	This command is used to match the exact word "Harry" in the `harry_potter_book.txt` file and return the total word count.
+
+* grep -ow "Ron" harry_potter_book.txt | wc -w :
+ 	This command is used to match the exact word "Ron" in the `harry_potter_book.txt` file and return the total word count.
+
+* grep -ow "Hermione" harry_potter_book.txt | wc -w :
+ 	This command is used to match the exact word "Hermione" in the `harry_potter_book.txt` file and return the total word count.
+
+* grep -ow "Dumbledore" harry_potter_book.txt | wc -w :
+ 	This command is used to match the exact word "Dumbledore" in the `harry_potter_book.txt` file and return the total word count.
+
+* sed -n "100,200p" harry_potter_book.txt :
+ 	This command gives us the content which starts from line 100 to line 200 of the `harry_potter_book.txt` file.
+
+* sort harry_potter_book.txt | uniq | wc -w :
+ 	This command sorts the complete content of the `harry_potter_book.txt` file, filters it based on unique words in the sorted text, and counts the number of unique words in the text file.
+
+# Processes, Ports
+* ps aux -h | grep brave :
+ 	This command prints and lists all the processes that are related to the browser, which is Brave, in human-readable form.
+
+* pkill brave :
+ 	This command kills the processes that are related to Brave.
+
+* ps -eo pid,%cpu,comm --sort=-%cpu | head -4 :
+ 	This command displays the process ID, CPU usage, and command details, where the details are sorted based on CPU usage. `head -4` gives the top four processes with the highest CPU usage.
+
+* ps -eo pid,%mem,comm --sort=-%mem | head -4 :
+ 	This command does the same thing as the previous command. The only difference is that it displays the top four processes based on memory usage.
+
+* python3 -m http.server 8000 :
+ 	This command is used to start a Python server on port 8000.
+
+* ps aux | grep "[p]ython3 -m http.server 8000" | awk '{print $2}' | xargs kill -9 :
+ 	This command is used to kill the Python server process started on port 8000 from another terminal. While testing this script file, I found that sometimes the process blocks the termination of the server on port 8000, so `kill -9` is used to forcefully terminate the process.
+
+* sudo python3 -m http.server 90 :
+ 	This command is used to start a Python server on port 90. Ports below 1000 require higher privileges, so `sudo` is used to run the command with administrator privileges.
+
+* ps aux | grep "[p]ython -m http.server 90" | awk '{print $2}' | xargs sudo kill :
+ 	This command is used to kill the process running the Python server on port 90. `sudo` is used because killing the process requires higher privileges.
+
+* ss -tunap :
+ 	This command is used to show the statistics or details of network connections with TCP and UDP ports. `ss` is used because it is considered a newer alternative to the deprecated `netstat` command.
+
+* sudo ss -lunpt | grep ":5432" :
+ 	This command listens for port number 5432 and prints the details of the process that is listening on port 5432.
+
+# Managing software
+* sudo apt install htop vim nginx :
+ 	This command uses `apt` to install the packages or software mentioned in the command. `sudo` is used to provide administrator privileges.
+
+* sudo apt remove nginx :
+ 	This command is used to remove the Nginx software. `sudo` is used to provide administrator privileges.
